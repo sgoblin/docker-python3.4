@@ -19,7 +19,7 @@ RUN apt-get update \
     && apt-get autoremove \
     && apt-get clean
     
-ADD https://bootstrap.pypa.io/get-pip.py /tmp
+ADD https://bootstrap.pypa.io/get-pip.py /tmp/
 RUN python3 /tmp/get-pip.py && rm /tmp/get-pip.py
 
 RUN pip3 install -U "virtualenv==12.0.7"
