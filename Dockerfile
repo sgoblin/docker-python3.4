@@ -15,7 +15,6 @@ RUN apt-get update \
     pkg-config \
     python3.4 \
     python3.4-dev \
-    python3-pip \
     && apt-get autoremove \
     && apt-get clean
     
