@@ -16,12 +16,11 @@ RUN apt-get update \
     python3.4 \
     python3.4-dev \
     python3-pip \
-    busybox \
     && apt-get autoremove \
     && apt-get clean
     
-WORKDIR /tmp
-RUN busybox wget http://cdn.rawgit.com/pypa/pip/b9f2d5d5bb4c9dba8dbba3cc09a24fefb12fb38e/contrib/get-pip.py && python3 get-pip.py && rm get-pip.py
+ADD https://bootstrap.pypa.io/get-pip.py /tmp
+RUN python3 /tmp/get-pip.py && rm /tmp/get-pip.py
 
 RUN pip3 install -U "virtualenv==12.0.7"
 
