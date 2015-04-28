@@ -1,7 +1,7 @@
 # Base python 3.4 build, inspired by
 # https://github.com/crosbymichael/python-docker/blob/master/Dockerfile
-FROM ubuntu:14.04
-MAINTAINER Michael Twomey <mick@twomeylee.name>
+FROM ubuntu:vivid
+MAINTAINER Ryan M. <ryanm@redcow.club>
 
 RUN apt-get update \
     && apt-get upgrade -y \
@@ -15,7 +15,7 @@ RUN apt-get update \
     pkg-config \
     python3.4 \
     python3.4-dev \
-    && apt-get autoremove \
+    && apt-get autoremove -y \
     && apt-get clean
     
 ADD https://bootstrap.pypa.io/get-pip.py /tmp/
@@ -24,4 +24,4 @@ RUN python3 /tmp/get-pip.py && rm /tmp/get-pip.py
 RUN pip3 install -U "virtualenv==12.1.1"
 
 CMD []
-ENTRYPOINT ["/usr/bin/python3"]
+ENTRYPOINT ["/bin/bash"]
