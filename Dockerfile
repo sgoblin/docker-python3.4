@@ -3,7 +3,8 @@
 FROM ubuntu:vivid
 MAINTAINER Ryan M. <ryanm@redcow.club>
 
-RUN apt-get update \
+RUN sed -i 's/archive.ubuntu.com/mirror.picosecond.org/' /etc/apt/sources.list \
+    && apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y \
     build-essential \
