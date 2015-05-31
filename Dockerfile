@@ -23,7 +23,7 @@ RUN sed -i 's/archive.ubuntu.com/mirrors.200p-sf.sonic.net/' /etc/apt/sources.li
 ADD https://bootstrap.pypa.io/get-pip.py /tmp/
 RUN ln -s /usr/bin/python3.4 /usr/bin/python3 && python3 /tmp/get-pip.py && rm /tmp/get-pip.py
 
-RUN pip3 install -U "virtualenv==12.1.1"
+RUN pip3 install -U virtualenv
 
 CMD []
 ENTRYPOINT ["/bin/bash"]
