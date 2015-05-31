@@ -4,6 +4,7 @@ FROM ubuntu:vivid
 MAINTAINER Ryan M. <ryanm@redcow.club>
 
 RUN sed -i 's/archive.ubuntu.com/mirrors.200p-sf.sonic.net/' /etc/apt/sources.list \
+    && sed -i 's/deb-src/#deb-src/' /etc/apt/sources.list \
     && apt-get update \
     && apt-get upgrade -y \
     && apt-get install -y \
